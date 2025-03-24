@@ -5,8 +5,11 @@ services:
       - '80:80'
       - '443:443'
     environment:
-      DOMAINS: 'wpp.rauzee.com'
+      DOMAINS: 'wpp.rauzee.com -> http://localhost:8080'
       STAGE: production
+    links:
+      - api
+    restart: always
   api:
     container_name: evolution_api
     image: atendai/evolution-api:homolog
