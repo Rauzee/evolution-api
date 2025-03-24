@@ -4,8 +4,10 @@ services:
     ports:
       - '80:80'
       - '443:443'
+    links:
+      - api
     environment:
-      DOMAINS: 'wpp.rauzee.com -> http://172.17.0.1'
+      DOMAINS: 'wpp.rauzee.com -> http://api'
       STAGE: production
     volumes:
       - https-portal-data:/var/lib/https-portal
