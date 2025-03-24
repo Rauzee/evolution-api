@@ -6,6 +6,7 @@ services:
       - '443:443'
     environment:
       DOMAINS: 'wpp.rauzee.com'
+      STAGE: production
   api:
     container_name: evolution_api
     image: atendai/evolution-api:homolog
