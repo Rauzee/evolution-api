@@ -4,10 +4,11 @@ services:
     ports:
       - '80:80'
       - '443:443'
-      - '8080:8080'
     environment:
       DOMAINS: 'wpp.rauzee.com -> http://api:8080'
       STAGE: production
+    links:
+      - api
     restart: always
   api:
     container_name: evolution_api
