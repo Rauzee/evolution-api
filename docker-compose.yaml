@@ -72,7 +72,9 @@ volumes:
 
 networks:
   public-net:
+    name: public-net
     driver: bridge
   evolution-net:
+    name: evolution-net
     driver: bridge
     internal: true
