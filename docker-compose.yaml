@@ -5,10 +5,10 @@ services:
       - '80:80'
       - '443:443'
     environment:
-      DOMAINS: 'wpp.rauzee.com -> http://localhost:8080'
+      DOMAINS: 'wpp.rauzee.com -> http://api'
       STAGE: production
-    links:
-      - api
+    # links:
+      # - api
     restart: always
   api:
     container_name: evolution_api
