@@ -5,7 +5,7 @@ services:
       - '80:80'
       - '443:443'
     environment:
-      DOMAINS: 'wpp.rauzee.com -> http://0.0.0.0:8080'
+      DOMAINS: 'wpp.rauzee.com -> http://172.17.0.1:8080'
       STAGE: production
     links:
       - api
