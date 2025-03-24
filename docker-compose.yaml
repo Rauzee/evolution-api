@@ -12,6 +12,7 @@ services:
     volumes:
       - https-portal-data:/var/lib/https-portal
     networks:
+      - public-net
       - evolution-net
 
   api:
@@ -70,6 +71,8 @@ volumes:
   https-portal-data:
 
 networks:
-  evolution-net:
-    name: evolution-net
+  public-net:
     driver: bridge
+  evolution-net:
+    driver: bridge
+    internal: true
