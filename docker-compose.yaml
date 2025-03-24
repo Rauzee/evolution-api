@@ -1,4 +1,11 @@
 services:
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - '80:80'
+      - '443:443'
+    environment:
+      DOMAINS: 'wpp.rauzee.com'
   api:
     container_name: evolution_api
     image: atendai/evolution-api:homolog
@@ -52,7 +59,6 @@ volumes:
   evolution_instances:
   evolution_redis:
   postgres_data:
-
 
 networks:
   evolution-net:

@@ -18,7 +18,6 @@ services:
 volumes:
   evolution_instances:
 
-
 networks:
   evolution-net:
     name: evolution-net
