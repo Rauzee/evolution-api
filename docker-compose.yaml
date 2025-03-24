@@ -11,6 +11,9 @@ services:
       STAGE: production
     volumes:
       - https-portal-data:/var/lib/https-portal
+    networks:
+      - evolution-net
+
   api:
     container_name: evolution_api
     image: atendai/evolution-api:homolog
