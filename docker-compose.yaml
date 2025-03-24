@@ -5,11 +5,10 @@ services:
       - '80:80'
       - '443:443'
     environment:
-      DOMAINS: 'wpp.rauzee.com -> http://172.17.0.1:8080'
+      DOMAINS: 'wpp.rauzee.com -> http://172.17.0.1'
       STAGE: production
-    links:
-      - api
-    restart: always
+    volumes:
+      - https-portal-data:/var/lib/https-portal
   api:
     container_name: evolution_api
     image: atendai/evolution-api:homolog
@@ -63,6 +62,7 @@ volumes:
   evolution_instances:
   evolution_redis:
   postgres_data:
+  https-portal-data:
 
 networks:
   evolution-net:
